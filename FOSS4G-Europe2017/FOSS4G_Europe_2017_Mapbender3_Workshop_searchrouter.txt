@@ -1,0 +1,79 @@
+-- OSGeo-Live PostgreSQL database osm_local
+
+----------------------------
+-- Create view on table planet_osm_point and refer only to the post boxes
+----------------------------
+
+CREATE OR REPLACE VIEW view_planet_osm_point AS 
+ SELECT osm_id,
+ gid,
+    "addr:housenumber" AS housenumber,
+    amenity,
+    barrier,
+    bicycle,
+    brand,
+    building,
+    capital,
+    disused,
+    highway,
+    historic,
+    man_made,
+    name,
+    power,
+    public_transport,
+    railway,
+    ref AS location,
+    religion,
+    shop,
+    tourism,
+    "tower:type" AS towertype,
+    z_order,
+    way AS geom
+   FROM planet_osm_point
+  WHERE amenity = 'post_box'::text
+
+
+#---------------------------------------------------------
+class: Mapbender\CoreBundle\Component\SQLSearchEngine
+class_options:
+    connection: osm_local
+    relation: view_planet_osm_point
+    attributes:
+        - osm_id
+        - amenity
+        - brand
+        - highway
+        - name
+        - location
+        - gid
+    geometry_attribute: geom
+form:
+    location:
+        type: text
+        options:
+            required: false
+            label: location
+            attr:
+                data-autocomplete: on
+        compare: ilike
+results:
+    view: table
+    count: true
+    headers:
+        location: Location
+        brand: Brand
+    callback:
+        event: click
+        options:
+            buffer: 50
+            minScale: 500
+            maxScale: 2500
+    styleMap:
+        default:
+            strokeColor: '#00ff00'
+            strokeOpacity: 1
+            fillOpacity: 0
+        select:
+            strokeColor: '#ff0000'
+            fillColor: '#ff0000'
+            fillOpacity: 0.8

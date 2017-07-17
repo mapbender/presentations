@@ -1,0 +1,83 @@
+#----------------------------
+# OSGeo-Live 
+# add a connection to your osm_local database to mapbender
+# read more about database connections http://doc.mapbender3.org/en/book/database.html
+#----------------------------
+## in config.yml
+            osm_local:
+                driver:   %database2_driver%
+                host:     %database2_host%
+                port:     %database2_port%
+                dbname:   %database2_name%
+                path:     %database2_path%
+                user:     %database2_user%
+                password: %database2_password%
+                charset:  UTF8
+
+# in parameters.yml
+
+    # database connection to PostgreSQL database osm_local 
+    database2_driver:   pdo_pgsql
+    database2_host:     localhost
+    database2_port:     5432
+    database2_name:     osm_local
+    database2_path:     ~
+    database2_user:     user
+    database2_password: user
+
+
+#----------------------------
+# digitizer configuration
+#----------------------------
+poi:
+    label: point digitizing
+    maxResults: 500
+    featureType:
+        connection: osm_local
+        table: planet_osm_point
+        uniqueId: gid
+        geomType: point
+        geomField: geom
+        srid: 4326
+        filter: amenity = 'post_box'
+    openFormAfterEdit: true
+    zoomScaleDenominator: 500
+    allowEditData: true
+    allowDelete: true
+    allowDigitize: true
+    toolset:
+        - type: drawPoint
+        - type: moveFeature
+        - type: selectFeature
+        - type: removeSelected
+    popup:
+        title: point test suite
+        width: 500px
+    searchType: currentExtent   # currentExtent|all - default is currentExtent
+    tableFields:
+        gid: {label: Nr. , width: 20%}
+        location: {label: Location , width: 80%}
+    formItems:
+       - type: tabs
+         children:
+           - type: form
+             title: Basic information
+             css: {padding: 10px}
+             children:
+                 - type: label
+                   title: Welcome to the digitize demo. Try the new Mapbender3 feature!
+                 - type: input
+                   title: Name
+                   mandatory: true
+                   name: name
+                   mandatoryText: Please give a name to the poi.
+                   infoText: "Help: Please give a name to the new object."
+                 - type: input
+                   title: Location
+                   mandatory: false
+                   name: location
+                   mandatoryText: Please give a title to the poi.
+                 - type: select
+                   title: Amenity
+                   name: amenity
+                   options: {post_box: post_box}
