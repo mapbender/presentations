@@ -1,0 +1,79 @@
+Daten AGIT Workshop Mapbender:
+Anwendung: https://demo.mapbender3.org/application/agit_workshop
+Dateien: https://files.wheregroup.com/index.php/s/8ptQbVj20luhN8B
+
+-----------------------------------------------------------------------------------------------
+Main Map:
+
+SRS: EPSG 25833
+
+Max. extent:
+min x: -275634	min y: 4962374
+max x: 1067675	max y: 5562977
+
+Start extent:
+min x: 351657	min y: 5294886
+max x: 355683	max y: 5296688
+
+-----------------------------------------------------------------------------------------------
+Dienste zum Testen:
+WMS laden in Version 1.1.1 oder 1.3.0
+
+Salzburg: 
+https://data.stadt-salzburg.at/geodaten/wms?service=WMS&version=1.3.0&request=GetCapabilities&layers=ogdsbg:stadtteil
+https://service.salzburg.gv.at/arcgis/services/Extern/Geoland_Viewer_WMS_Land_Salzburg/MapServer/WMSServer?Service=WMS&Request=GetCapabilities&Version=1.3.0
+
+http://osm-demo.wheregroup.com/service?REQUEST=GetCapabilities&Service=WMS&Version=1.1.1
+http://wms.wheregroup.com/cgi-bin/germany_workshop.xml?VERSION=1.1.1&REQUEST=GetCapabilities&SERVICE=WMS
+http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?VERSION=1.1.1&REQUEST=GetCapabilities&SERVICE=WMS
+http://www.geoportal.de/DE/Geoportal/geoportal.html?lang=de
+
+
+-----------------------------------------------------------------------------------------------
+Hintergrundwechsler - Vorlage:
+
+.mb-element-basesourceswitcher li[data-state='active'] {
+     position: static;
+     background-color: #578e2a;
+     color: #578e2a;
+     font-size: 12px;
+     font-weight: 800;
+     padding: 4px;
+     border-right-width: 1px;
+     margin-bottom: 5px;
+     margin-right: 5px; }
+
+.mb-element-basesourceswitcher li[data-state=''] {
+     background-color: #ffffff;
+     color: #6fb536;
+     font-weight: 800;
+     font-size: 12px;
+     padding: 4px;
+     margin-bottom: 5px;
+     margin-right: 5px;
+     opacity: 0.4; }
+
+.mb-element-basesourceswitcher li:hover {
+     border-color: #6fb536;
+     background-color: #6fb536;
+     color: #6fb536;
+     padding: 4px;
+     margin-bottom: 5px;
+     margin-right: 5px;
+     opacity: 1; }
+
+.mb-element-basesourceswitcher li {
+     position: relative;
+     border-radius: 3px;
+     border: 1px solid;
+     border-color: #848484; }
+
+.mb-element-basesourceswitcher li[data-sourceset='111'] {
+     background: url("osm.png");
+     width: 110px;
+     height: 110px; }
+
+.mb-element-basesourceswitcher li[data-sourceset='109'] {
+     background: url("orthofotos.png");
+     width: 110px;
+     height: 110px; }
