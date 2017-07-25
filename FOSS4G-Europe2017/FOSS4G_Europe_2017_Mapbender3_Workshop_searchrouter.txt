@@ -4,6 +4,11 @@
 -- Create view on table planet_osm_point and refer only to the post boxes
 ----------------------------
 
+ALTER TABLE planet_osm_point ADD COLUMN gid serial;
+
+
+-- column ref gets the alias location in the view
+
 CREATE OR REPLACE VIEW view_planet_osm_point AS 
  SELECT osm_id,
  gid,
@@ -39,10 +44,8 @@ class_options:
     connection: osm_local
     relation: view_planet_osm_point
     attributes:
-        - osm_id
         - amenity
         - brand
-        - highway
         - name
         - location
         - gid

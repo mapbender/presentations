@@ -13,6 +13,7 @@
                 user:     %database2_user%
                 password: %database2_password%
                 charset:  UTF8
+                
 
 # in parameters.yml
 
@@ -24,6 +25,7 @@
     database2_path:     ~
     database2_user:     user
     database2_password: user
+    
 
 
 #----------------------------
@@ -37,7 +39,7 @@ poi:
         table: planet_osm_point
         uniqueId: gid
         geomType: point
-        geomField: geom
+        geomField: way
         srid: 4326
         filter: amenity = 'post_box'
     openFormAfterEdit: true
@@ -56,7 +58,7 @@ poi:
     searchType: currentExtent   # currentExtent|all - default is currentExtent
     tableFields:
         gid: {label: Nr. , width: 20%}
-        location: {label: Location , width: 80%}
+        ref: {label: Location , width: 80%}
     formItems:
        - type: tabs
          children:
@@ -75,8 +77,8 @@ poi:
                  - type: input
                    title: Location
                    mandatory: false
-                   name: location
-                   mandatoryText: Please give a title to the poi.
+                   name: ref
+                   mandatoryText: Please define a location for the post-box
                  - type: select
                    title: Amenity
                    name: amenity
