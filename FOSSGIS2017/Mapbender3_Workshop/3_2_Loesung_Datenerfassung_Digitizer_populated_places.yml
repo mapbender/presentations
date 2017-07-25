@@ -1,0 +1,84 @@
+poi:
+    label: point digitizing
+    maxResults: 500
+    featureType:
+        connection: ne2_db
+        table: ne_10m_populated_places
+        filter: 'iso_a2 IN (''DE'',''CH'',''AT'')'
+        uniqueId: gid
+        geomType: point
+        geomField: the_geom
+        srid: 4326
+    openFormAfterEdit: true
+    zoomScaleDenominator: 500
+    allowEditData: true
+    allowDelete: true
+    allowDigitize: true
+    toolset:
+        - type: drawPoint
+        - type: modifyFeature
+        - type: moveFeature
+        - type: selectFeature
+        - type: removeSelected
+    popup:
+        title: point test suite
+        width: 500px
+    searchType: currentExtent   # currentExtent|all - default is currentExtent
+    inlineSearch: true
+    styles:
+        default:
+            strokeWidth: 2
+            strokeColor: '#0000ff'
+            fillColor: '#00f300'
+            fillOpacity: 0
+            pointRadius: 10
+        select:
+            strokeWidth: 3
+            fillColor: '#FF0000'
+            strokeColor: '#FF00FF'
+            fillOpacity: 1
+            pointRadius: 10
+    tableFields:
+        gid: {label: Nr. , width: 20%}
+        name: {label: Name , width: 30%}
+        adm0name: {label: Land, width: 30%}
+        iso_a2: {label: Code, width: 20%}
+    formItems:
+       - type: tabs
+         children:
+           - type: form
+             title: Basic information
+             css: {padding: 10px}
+             children:
+                 - type: label
+                   title: Welcome to the digitize demo. Try the new Mapbender3 feature!
+                 - type: input
+                   title: Name
+                   mandatory: true
+                   name: name
+                   mandatoryText: Please give a name to the poi.
+                   infoText: "Help: Please give a name to the new object."
+                 - type: input
+                   title: Land
+                   mandatory: false
+                   name: adm0name
+                   mandatoryText: Bitte das land angeben.
+                 - type: breakLine
+                 - type: select
+                   title: Type
+                   name: iso_a2
+                   #options: {AT: AT, DE: DE, CH: CH}
+                   connection: ne2_db
+                   sql: 'SELECT DISTINCT iso_a2 as a, iso_a2 FROM ne_10m_populated_places where iso_a2 IN (''DE'',''CH'',''AT'') order by iso_a2;'
+           - type: form
+             title: Einwohner
+             css: {padding: 10px}
+             children:
+                 - type: label
+                   title: Einwohnerangabe
+                 - type: fieldSet
+                   children:
+                       - type: input
+                         title: Population (max.)
+                         name: pop_max
+                         css: {width: 30%}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataConfig>
+    <dataSource
+        type="JdbcDataSource"
+        driver="org.postgresql.Driver"
+        readOnly="true"
+        autoCommit="false"
+        transactionIsolation="TRANSACTION_READ_COMMITTED"
+        holdability="CLOSE_CURSORS_AT_COMMIT"
+        url="jdbc:postgresql://localhost:5432/natural_earth2"
+        user="user"
+        password="user" />
+    <document>
+        <entity name="places" query="SELECT gid, name || ' ' || adm0name as text, name || ' ' || pop_max || ' Einw.' as label, st_astext(the_geom) as geom  FROM ne_10m_populated_places">
+            <field column="gid" name="gid" />
+            <field column="text" name="text" />
+            <field column="label" name="label" />
+            <field column="geom" name="geom" />
+        </entity>
+    </document>
+</dataConfig>

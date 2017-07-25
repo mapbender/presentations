@@ -1,0 +1,88 @@
+1. Aufbau von Datenbankverbindungen 
+-------------------------------------
+(Einbindung der Datenbank zur Suche und Digitalisierung in Mapbender3. Anpassung der parameters.yml und config.yml) 
+
+http://doc.mapbender3.org/de/book/database.html 
+
+Passen Sie die parameters.yml und config.yml an, so dass die Datenbank natural_earth2 unter dem Namen ne2_db zur Verfügung steht. 
+Die Verbindung zur Datenbank kann über den Benutzer user und das Passwort user erfolgen. Port 5432. 
+
+
+2. Suchen mit dem SearchRouter
+--------------------------------------- 
+(Aufbau einer einfachen Suche über SQL mit Datenquelle PostgreSQL/PostGIS) 
+
+http://doc.mapbender3.org/de/bundles/Mapbender/CoreBundle/elements/search_router.html 
+
+2.1
+* Binden Sie das Element Suchen (SearchRouter) in die Anwendung in die Sidepane ein. 
+* Bauen Sie mit dem ersten Codeblock aus der Dokumentation eine Suche auf die Tabelle ne_10m_populated_places (datenbank PostgreSQL ne2_db) auf. 
+* Suchen Sie in der Spalte name 
+* Lassen Sie sich gid, name, adm0name ausgeben und vergeben Sie sinnvolle Namen
+* Zoomen Sie mit Puffer 0.001 oder auf den Maßstab 1:10000 
+* Lassen Sie sich die Trefferanzahl ausgeben 
+
+
+2.2
+* Suchen Sie nun zusätzlich in der Spalte iso_a2 (Ländercode z.B. DE). 
+* Beide Suchfelder sollen keine Pflichtfelder sein 
+* Beschriften Sie die Suchspalten mit einem freien Text (Stichwort label) 
+* Nutzen Sie für die Ausgabe der Spalte name ﻿data-autocomplete:on und bauen Sie über data-autocomplete-using: iso_a2 eine Abhängigkeit zur Spalte countrycode auf 
+
+
+2.3 
+* Erstellen Sie über den type choice eine Auswahlbox für die Ländercodes AT, CH und DE (Spalte iso_a2)
+* Passen Sie die Farben der Treffer und der Auswahl an
+
+2.4
+* Passen Sie die Struktur der Suche an, so dass die Buttons direkt unter dem Formular stehen (Datei search_router.html.twig)
+
+
+
+3. Datenerfassung mit dem Digitizer
+--------------------------------------- 
+(Mit Hilfe des Digitizers können Daten über das Webfrontend von Mapbender3 erfasst und bearbeitet werden. Der Digitizer kann auch nur dazu genutzt werden, Daten über eine Suche zur Verfügung zu stellen.)
+
+Orientieren Sie sich an dem Beispiel unter http://doc.mapbender3.org/de/book/digitizer.html
+
+3.1
+* Legen Sie in ihrer Anwendung das Element digitizer in der Sidepane an
+* Konfigurieren Sie die Datenerfassung für die Tabelle ne_10m_populated_places
+* Nutzen Sie in der Tabelleanzeige (tableFields) die Spalten gid, name, adm0name, iso_a2
+* Erfassung Textfelder name, adm0name, pop_max
+* Auswahlbox iso_a2
+
+3.2
+* zeigen Sie nur die Punkte mit iso_a2 DE, CH, AT an
+* reduzieren Sie die Auswahlbox ebenfalls auf DE, CH, AT
+* Anpassung des Stils der Trefferanzeige
+
+3.3
+* Erstellen Sie eine Konfiguration, die nur die Ansicht und Suche (inlineSearch) in den Daten erlaubt
+* Datenfelder sollen nicht editierbar sein (type text)
+
+
+
+4. Suche mit SimpleSearch über Solr
+-----------------------------------------
+(Mapbender3 bietet eine Einfeldsuche, die einen Solr Suchdienst anfragen kann)
+
+http://doc.mapbender3.org/de/book/simplesearch.html
+http://demo.postnas.org/mapbender3_nightly/application/alkis_demo
+
+
+
+5. Eigene Templates/Bundles
+---------------------------------
+* http://doc.mapbender3.org/de/book/templates.html
+* Aktivieren Sie das Workshop Bundle https://github.com/mapbender/mapbender-workshop
+* verweisen Sie in der Datei DemoBundle/Template/DemoFullscreen.php auf die Datei demo_fullscreen.scss 
+
+
+
+6. css der Start/Login/Passwort-vergessen-Seite anpassen
+-------------------------------------------------------------
+* siehe 2.4 Überschreiben von twig-Dateien
+* Verweisen Sie auf die css-Dateien im Workshop Bundle (manager.css, login.css und password.css)
+* im Workshop-Bundle finden sich unter app/Resources Verzeichnisse und twig-Dateien zum Anpassen der Start/Login/Passwort-vergessen-Seite. Legen Sie diese an die richtige Stelle ab und schauen Sie sich die angepassten Seiten an
+

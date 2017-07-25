@@ -1,0 +1,54 @@
+class: Mapbender\CoreBundle\Component\SQLSearchEngine
+class_options:
+    connection: ne2_db
+    relation: ne_10m_populated_places
+    attributes:
+        - gid
+        - name
+        - pop_max
+        - adm0name
+        - iso_a2
+    geometry_attribute: the_geom
+form:
+    name:
+        type: text
+        options:
+            required: false
+            attr: 
+                data-autocomplete: on   
+                data-autocomplete-using: iso_a2
+        compare: ilike-right
+    iso_a2:
+        type: choice
+        options:
+            label: Ländercode
+            empty_value: Bitte Ländercode wählen.
+            required: false
+            choices:
+                AT: AT Österreich
+                CH: CH Schweiz
+                DE: DE Deutschland
+results:
+    view: table
+    count: true
+    headers:
+        gid: ID
+        name: Name
+        pop_max: Einwohner
+        adm0name: Land
+        iso_a2: Code
+    callback:
+        event: click
+        options:
+            buffer: 0.001
+            minScale: null
+            maxScale: null
+    styleMap:  # Siehe unten für weitere Styles
+        default:
+            strokeColor: '#00ff00'
+            strokeOpacity: 1
+            fillOpacity: 0
+        select:
+            strokeColor: '#ff0000'
+            fillColor: '#ff0000'
+            fillOpacity: 0.4

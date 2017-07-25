@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <luceneMatchVersion>5.2.0</luceneMatchVersion>
+
+    <dataDir>${solr.data.dir:}</dataDir>
+
+    <schemaFactory class="ClassicIndexSchemaFactory" />
+    <updateHandler class="solr.DirectUpdateHandler2" />
+
+    <requestHandler name="/select" class="solr.SearchHandler">
+        <!--
+            defaults    : Defaults Einstellung die überschrieben werden kann.
+            invariants  : Defaults Einstellung die NICHT überschrieben werden kann.
+            appends     : Wird nicht überschrieben sondern angehängt.
+        -->
+        <lst name="defaults">
+            <str name="echoParams">explicit</str>
+            <int name="rows">10</int>
+            <str name="df">text</str>
+            <str name="q.op">AND</str>
+            <str name="sort">label asc</str>
+        </lst>
+    </requestHandler>
+
+    <!--
+        Der UpdateRequestHandler wird dazu benutzt, Dokumente an Solr zu senden
+   ACHTUNG rausnehmen, wenn der Server oeffentlich ist
+    -->
+    <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
+
+    <!--
+        Definition wie der Rückgabewert ausgegeben werden soll
+    -->
+    <queryResponseWriter name="json" class="solr.JSONResponseWriter">
+        <str name="content-type">text/plain; charset=UTF-8</str>
+    </queryResponseWriter>
+
+<!-- Benötigte Java Bibliothek laden -->
+    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*\.jar" />
+
+    <!-- RequestHandler einrichten, und auf eine Konfigurationsdatei verweisen.
+         Dateiname kann frei vergeben werden.-->
+    <requestHandler name="/dataimport" class="solr.DataImportHandler">
+        <lst name="defaults">
+            <str name="config">data-config.xml</str>
+        </lst>
+    </requestHandler>
+
+
+</config>
+
