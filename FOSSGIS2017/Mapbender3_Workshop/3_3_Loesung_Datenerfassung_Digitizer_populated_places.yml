@@ -1,0 +1,62 @@
+poi:
+    label: point digitizing
+    maxResults: 500
+    featureType:
+        connection: ne2_db
+        table: ne_10m_populated_places
+        filter: 'iso_a2 IN (''DE'',''CH'',''AT'')'
+        uniqueId: gid
+        geomType: point
+        geomField: the_geom
+        srid: 4326
+    openFormAfterEdit: true
+    zoomScaleDenominator: 500
+    allowEditData: false
+    allowDelete: false
+    allowDigitize: false
+    toolset:
+#        - type: drawPoint
+#        - type: modifyFeature
+#        - type: moveFeature
+        - type: selectFeature
+#        - type: removeSelected
+    popup:
+        title: point test suite
+        width: 500px
+    searchType: currentExtent   # currentExtent|all - default is currentExtent
+    inlineSearch: true
+    styles:
+        default:
+            strokeWidth: 2
+            strokeColor: '#0000ff'
+            fillColor: '#00f300'
+            fillOpacity: 0
+            pointRadius: 10
+        select:
+            strokeWidth: 3
+            fillColor: '#FF0000'
+            strokeColor: '#FF00FF'
+            fillOpacity: 1
+            pointRadius: 10
+    tableFields:
+        gid: {label: Nr. , width: 20%}
+        name: {label: Name , width: 30%}
+        adm0name: {label: Land, width: 30%}
+        iso_a2: {label: Code, width: 20%}
+    formItems:
+         - type: label
+           title: 'Information zu diesem Ort:'
+         - type: text
+           title: Name
+           text: data.name
+         - type: text
+           title: Land
+           text: data.adm0name
+         - type: breakLine
+         - type: text
+           title: Code
+           text: data.iso_a2
+         - type: text
+           title: Population (max.)
+           text: data.pop_max
+		   

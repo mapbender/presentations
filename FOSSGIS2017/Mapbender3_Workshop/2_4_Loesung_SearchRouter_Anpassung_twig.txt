@@ -1,0 +1,33 @@
+Anpassung twig-Datei
+-----------------------
+
+Twig Dateien können überschrieben werden
+
+* Anlegen der Verzeichnisstruktur unter /var/www/html/mapbender3/app/Resources/
+
+1. neue Verzeichnisse /MapbenderCoreBundle/views/Element
+
+2. kopieren der Datei von mapbender/mapbender/src/Mapbender/CoreBundle/Resources/views/Element/search_router.html.twig
+
+3. Anpassung der Struktur:
+
+
+<div class="mb-element mb-element-searchrouter" id="{{ element.id }}" title="{{ element.title | trans }}">
+    {{ form_widget(element.getRouteSelectForm.route) }}
+
+    <div class="search-forms" novalidate="novalidate">
+        {% for form in element.formViews %}
+            <form name="{{ form.vars.name }}" autocomplete="off">
+                {{ form_widget(form) }}
+            </form>
+        {% endfor %}
+    </div>
+    {%- if not element.configuration.asDialog %}
+    <div class="search-action-buttons">
+        <a href="#{{ element.id }}/button/reset" class="button right">{{ 'mb.core.searchrouter.popup.btn.reset' | trans }}</a>
+        <a href="#{{ element.id }}/button/ok" class="button right">{{ 'mb.core.searchrouter.popup.btn.ok' | trans }}</a>
+    </div>
+    {% endif -%}
+    <div class="clear"></div>
+    <div class="search-results"></div>
+</div>

@@ -1,0 +1,46 @@
+Solr Suche mit SimpleSearch
+-------------------------------
+SimpleSearch bietet eine Einfeldsuche. Die Suchanfrage erfolgt dabei an einen Solr Suchdienst.
+
+
+http://doc.mapbender3.org/de/bundles/Mapbender/CoreBundle/elements/simplesearch.html
+
+http://mapbender3.org/?q=en/gallery
+http://luftbilder.geoportal.ruhr/
+http://demo.postnas.org/mapbender3_nightly/application/alkis_demo
+
+
+Vorbereitung (schon erfolgt)
+----------------------------------
+1.  Solr installieren
+cd /data
+wget http://apache.lauf-forum.at/lucene/solr/5.4.1/solr-5.4.1.tgz
+tar -zxvf solr-5.4.1.tgz
+cd solr-5.4.1/
+
+2. solr_data unter /data/
+
+3. PostgreSQL Treiber im Core unter lib ablegen
+
+
+Teil 1
+--------
+Solr starten
+/data/solr-5.4.1/bin/solr start -s /data/solr_data/
+
+Aufruf Sorl über den Browser
+http://localhost:8983/solr/
+
+Solr stoppen
+/data/solr-5.4.1/bin/solr stop -all
+
+
+Teil 2
+--------
+Mapbender Element SimpleSearch hinzufügen:
+* Dokumentation http://doc.mapbender3.org/de/bundles/Mapbender/CoreBundle/elements/simplesearch.html
+
+http://localhost:8983/solr/places/select?wt=json&indent=true&rows=20
+
+collection_path: response.docs
+

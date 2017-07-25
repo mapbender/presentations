@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="places" version="1.5">
+
+	<!-- FIELDS -->
+    <field indexed="true" multiValued="false" name="gid" required="true" stored="true" type="int"/>
+    <field indexed="true" multiValued="true" name="text" required="true" stored="false" type="text"/>
+    <field indexed="true" multiValued="false" name="label" required="true" stored="true" type="string"/>
+    <field indexed="false" multiValued="false" name="geom" required="true" stored="true" type="string"/>
+
+
+	<uniqueKey>gid</uniqueKey>
+
+	<!-- FIELD TYPES -->
+    <fieldType class="solr.TrieIntField" name="int" positionIncrementGap="0" precisionStep="0"/>
+
+    <fieldType class="solr.StrField" name="string" sortMissingLast="true"/>
+    <fieldType class="solr.TextField" multiValued="true" name="text" positionIncrementGap="100">
+         
+     <analyzer type="index">
+<!--<tokenizer class="solr.WhitespaceTokenizerFactory"/>-->
+            <tokenizer class="solr.StandardTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.StandardTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+    </fieldType>
+</schema>
+

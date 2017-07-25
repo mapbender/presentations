@@ -1,0 +1,30 @@
+class: Mapbender\CoreBundle\Component\SQLSearchEngine
+class_options:
+    connection: ne2_db
+    relation: ne_10m_populated_places
+    attributes:
+        - gid
+        - name
+        - pop_max
+        - adm0name
+    geometry_attribute: the_geom
+form:
+    name:
+        type: text
+        options:
+            required: true
+        compare: exact
+results:
+    view: table
+    count: true
+    headers:
+        gid: ID
+        name: Name
+        pop_max: Einwohner
+        adm0name: Land
+    callback:
+        event: click
+        options:
+            buffer: 0.001
+            minScale: null
+            maxScale: null

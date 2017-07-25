@@ -1,0 +1,19 @@
+5. Eigene Templates/Bundles
+---------------------------------
+
+https://github.com/mapbender/mapbender-workshop/
+
+Download über
+https://github.com/mapbender/mapbender-workshop/archive/master.zip
+
+
+1. Workshop kopieren nach 
+mapbender3/src/
+
+2. AppKernel.php Eintrag erweitern 
+ new  Workshop\DemoBundle\WorkshopDemoBundle(),
+
+3. Web ausspielen
+app/console assets:install web --symlink --relative
+
+
