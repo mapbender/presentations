@@ -1,0 +1,20 @@
+OSM: 
+* http://osm-demo.wheregroup.com/service?REQUEST=GetCapabilities&Service=WMS&Version=1.3.0
+* http://www.geoportal.rlp.de/mapbender/php/wms.php?inspire=1&layer_id=45421&REQUEST=GetCapabilities&SERVICE=WMS
+* http://ows.terrestris.de/osm-gray/service?request=GetCapabilities&service=WMS
+
+Deutschland: 
+* http://wms.wheregroup.com/cgi-bin/germany_workshop.xml?VERSION=1.1.1&REQUEST=GetCapabilities&SERVICE=WMS
+* https://www-genesis.destatis.de/gis/cgi-bin/mapserv?map=/home/fgs/gis/gisdocs/wms/AI002-3_00.map&request=GetCapabilities&service=WMS&version=1.3.0
+
+Österreich: 
+* Data.gv.at – offene Daten Österreichs https://www.data.gv.at/suche/ (mit Filter WMS)
+
+NRW: 
+* https://www.wms.nrw.de/geobasis/wms_nw_dop20?
+* https://www.wms.nrw.de/geobasis/wms_nw_dvg?
+* http://www.wms.nrw.de/umwelt/laerm?request=GetCapabilities&service=WMS
+* http://www.wms.nrw.de/umwelt/Inspire_Darstellungsdienst_Natura2000_NRW?REQUEST=GetCapabilities&SERVICE=wms&VERSION=1.3.0
+* http://www.wms.nrw.de/umwelt/linfos?SERVICE=WMS&REQUEST=GetCapabilities&version=1.1.1
+
+ 
