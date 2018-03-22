@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Mapbender</title>
+<meta name="author" content="(Axel Schaefer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/theme/black.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Org-Reveal with Emacs.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Mapbender</h1><h2 class="author">Axel Schaefer</h2><p class="date">Created: 2018-03-21 Mi 17:07</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-org542cc3b">Was gibt es Neues in Mapbender?</a></li>
+<li><a href="#/slide-org5a4a1fb">Mein Gott, der Titel?!!</a></li>
+<li><a href="#/slide-org7818db0"></a></li>
+<li><a href="#/slide-orgae4f596">Was ist Mapbender?</a></li>
+<li><a href="#/slide-orgf3fb9c3">Professionelle Open-Source-Software</a></li>
+<li><a href="#/slide-orgaae9296">Erstellung kartenbasierter Webanwendungen</a>
+<ul>
+<li><a href="#/slide-orgee05ef8"></a></li>
+<li><a href="#/slide-org0b89431"></a></li>
+<li><a href="#/slide-org9a4d6a2"></a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgfb570f1">Erstellung / Administration</a>
+<ul>
+<li><a href="#/slide-org1325572">Viele eigene Anwendungen</a></li>
+<li><a href="#/slide-orgfd3900d">Einladen von WMS Diensten</a></li>
+<li><a href="#/slide-org73c9e75">Elemente / Funktionen in den Anwendungen</a></li>
+<li><a href="#/slide-orgc28d9ce">Anmeldung / Benutzerprofile / Absicherung</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org765dec3">Features</a>
+<ul>
+<li><a href="#/slide-org7be5af4">Digitalisierung / Editierung</a></li>
+<li><a href="#/slide-orgb4af93e">BaseSourceSwitcher</a></li>
+<li><a href="#/slide-org9cd460b">Suche</a></li>
+<li><a href="#/slide-org5efbb74">Druck</a></li>
+<li><a href="#/slide-org6feb28e">Druckausgabe</a></li>
+<li><a href="#/slide-orgfd80670">Redlining</a></li>
+<li><a href="#/slide-orgd73cef0">WMS Loader</a></li>
+<li><a href="#/slide-orgd487797">Thematischer Layerbaum</a></li>
+<li><a href="#/slide-orga600bd2">Messen (Linie / Fläche)</a></li>
+<li><a href="#/slide-orgd5c610e">Features: Anwendungen und Designs</a></li>
+<li><a href="#/slide-org42a14d1">Design Stadt Monheim</a></li>
+<li><a href="#/slide-org10001b4">Design Stadt Gütersloh</a></li>
+<li><a href="#/slide-org8986d2b">Design Kreis Lippe</a></li>
+<li><a href="#/slide-org77ec5c9">Features: Erweiterungen von Projekten</a></li>
+<li><a href="#/slide-org3fc865c">Kreis Lippe: Automatisches B-Plan laden</a></li>
+<li><a href="#/slide-orgb22afdd">Eisenbahnbundesamt: Legende</a></li>
+<li><a href="#/slide-org8b4dc04">EBA: Statistiken</a></li>
+<li><a href="#/slide-org93124f1">Stadt Troisdorf: Suchen</a></li>
+<li><a href="#/slide-org3d79a6a">Suchen&#x2026;</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org4de08de">Community</a>
+<ul>
+<li><a href="#/slide-org4be074a">Mapbender-Users Mailingliste</a></li>
+<li><a href="#/slide-org6955022">Github Issues</a></li>
+<li><a href="#/slide-org6946297">Contributing.md:</a></li>
+<li><a href="#/slide-orgcf01e6d">AirBNB JS Styleguide</a></li>
+<li><a href="#/slide-org6c0df3f">PHP Code Styleguide</a></li>
+<li><a href="#/slide-org8e6428a">Documentation:</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org8ab119d">Development</a>
+<ul>
+<li><a href="#/slide-org93fc0f4">Coordinate-Utility</a></li>
+<li><a href="#/slide-orgdf2f617">QGIS Layerreihenfolge Administration</a></li>
+<li><a href="#/slide-org9660b45">QGIS Layerreihenfolge Doku</a></li>
+<li><a href="#/slide-org07439ac">QGIS Layerreihenfolge Auswirkung</a></li>
+<li><a href="#/slide-org1af0f01">Viele interne Dinge (WMS und Co.)</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org0363013">Zukunft</a>
+<ul>
+<li><a href="#/slide-orgb2a9188">Pipeline</a></li>
+<li><a href="#/slide-org022fdfd">LDAP</a></li>
+<li><a href="#/slide-org3fdf3ca">UTF-Grid</a></li>
+<li><a href="#/slide-org32a7706">DimensionsHandler</a></li>
+<li><a href="#/slide-orgc265bd0">WMTS-Unterstützung</a></li>
+<li><a href="#/slide-org17a2584">Kleinigkeiten</a></li>
+<li><a href="#/slide-orgc5e614a">Versionierung</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org5ea4594">OpenLayers4</a>
+<ul>
+<li><a href="#/slide-org784ed8d">OL4: Stand</a></li>
+<li><a href="#/slide-orgdf62272">Vorzüge</a></li>
+<li><a href="#/slide-org0ea2ab1">Vorzüge</a></li>
+<li><a href="#/slide-org12321ed">OL4: Sponsoring</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org909be34"></a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-org542cc3b">
+<h2 id="org542cc3b">Was gibt es Neues in Mapbender?</h2>
+
+<div class="figure">
+<p><img src="https://raw.githubusercontent.com/mapbender/presentations/axs/fossgis2018/FOSSGIS2018/mapbender/images/mapbender_bender.jpg" alt="mapbender_bender.jpg" width="30%" height="30%" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org5a4a1fb">
+<h2 id="org5a4a1fb">Mein Gott, der Titel?!!</h2>
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/en/0/0f/FuturamaProfessorFarnsworth.png" alt="FuturamaProfessorFarnsworth.png" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org7818db0">
+<h2 id="org7818db0"></h2>
+<p>
+Axel Schaefer
+</p>
+
+<p>
+<a href="https://github.com/axxl">https://github.com/axxl</a> 
+</p>
+
+<p>
+Mapbender
+</p>
+
+<p>
+<a href="https://www.osgeo.org/projects/mapbender/">https://www.osgeo.org/projects/mapbender/</a> | <a href="https://github.com/mapbender">https://github.com/mapbender</a>
+</p>
+
+<p>
+WhereGroup
+</p>
+
+<p>
+<a href="http://www.wheregroup.com">http://www.wheregroup.com</a> | <a href="https://github.com/WhereGroup">https://github.com/WhereGroup</a> | <a href="https://www.osgeo.org/service-providers/wheregroup/">https://www.osgeo.org/service-providers/wheregroup/</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgae4f596">
+<h2 id="orgae4f596">Was ist Mapbender?</h2>
+
+<div class="figure">
+<p><img src="https://mapbender.org/sites/default/files/mapbender-logo_webside.png" alt="mapbender-logo_webside.png" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf3fb9c3">
+<h2 id="orgf3fb9c3">Professionelle Open-Source-Software</h2>
+<p>
+Quellcode: <a href="http://github.com/mapbender">Github</a>
+</p>
+
+<p>
+Maintainer: <a href="http://www.wheregroup.com">WhereGroup</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgaae9296">
+<h2 id="orgaae9296">Erstellung kartenbasierter Webanwendungen</h2>
+<div class="outline-text-2" id="text-orgaae9296">
+</div>
+</section>
+<section id="slide-orgee05ef8">
+<h3 id="orgee05ef8"></h3>
+<p>
+<a href="http://laermkartierung1.eisenbahn-bundesamt.de/mb3/app.php/application/eba">Eisenbahnbundesamt</a>
+</p>
+
+
+<div class="figure">
+<p><img src="https://mapbender.org/sites/default/files/eba.png" alt="eba.png" width="200%" height="200%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org0b89431">
+<h3 id="org0b89431"></h3>
+<p>
+<a href="http://geo.kreislippe.de/">Geoportal Kreis Lippe</a>
+</p>
+
+
+<div class="figure">
+<p><img src="http://mapbender.org/sites/default/files/geokreislippe.png" alt="geokreislippe.png" width="200%" height="200%" />
+</p>
+</div>
+
+
+
+</section>
+<section id="slide-org9a4d6a2">
+<h3 id="org9a4d6a2"></h3>
+<p>
+<a href="http://geoportal.frankfurt.de/">Geoportal Stadt Frankfurt</a>
+</p>
+
+
+<div class="figure">
+<p><img src="https://mapbender.org/sites/default/files/geoportalfrankfurt.png" alt="geoportalfrankfurt.png" width="200%" height="200%" />
+</p>
+</div>
+
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgfb570f1">
+<h2 id="orgfb570f1">Erstellung / Administration</h2>
+<p>
+"Backend"
+</p>
+
+<p>
+Nach der Anmeldung
+</p>
+
+
+</section>
+<section id="slide-org1325572">
+<h3 id="org1325572">Viele eigene Anwendungen</h3>
+
+<div class="figure">
+<p><img src="https://doc.mapbender.org/_images/mapbender3_application_overview.png" alt="mapbender3_application_overview.png" width="70%" height="70%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgfd3900d">
+<h3 id="orgfd3900d">Einladen von WMS Diensten</h3>
+
+<div class="figure">
+<p><img src="https://doc.mapbender.org/_images/mapbender3_wms_application_settings.png" alt="mapbender3_wms_application_settings.png" width="70%" height="70%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org73c9e75">
+<h3 id="org73c9e75">Elemente / Funktionen in den Anwendungen</h3>
+
+<div class="figure">
+<p><img src="https://doc.mapbender.org/_images/mapbender3_application_elements.png" alt="mapbender3_application_elements.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgc28d9ce">
+<h3 id="orgc28d9ce">Anmeldung / Benutzerprofile / Absicherung</h3>
+
+<div class="figure">
+<p><img src="https://doc.mapbender.org/_images/mapbender3_create_user.png" alt="mapbender3_create_user.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org765dec3">
+<h2 id="org765dec3">Features</h2>
+<div class="outline-text-2" id="text-org765dec3">
+</div>
+</section>
+<section id="slide-org7be5af4">
+<h3 id="org7be5af4">Digitalisierung / Editierung</h3>
+
+<div class="figure">
+<p><img src="https://doc.mapbender.org/_images/digitizer.png" alt="digitizer.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgb4af93e">
+<h3 id="orgb4af93e">BaseSourceSwitcher</h3>
+
+<div class="figure">
+<p><img src="./images/rvr_historische_luftbilder.png" alt="rvr_historische_luftbilder.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org9cd460b">
+<h3 id="org9cd460b">Suche</h3>
+
+<div class="figure">
+<p><img src="./images/rvr_adressuche.png" alt="rvr_adressuche.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org5efbb74">
+<h3 id="org5efbb74">Druck</h3>
+
+<div class="figure">
+<p><img src="./images/eba_drucken.png" alt="eba_drucken.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org6feb28e">
+<h3 id="org6feb28e">Druckausgabe</h3>
+
+<div class="figure">
+<p><img src="./images/eba_druckausgabe.png" alt="eba_druckausgabe.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgfd80670">
+<h3 id="orgfd80670">Redlining</h3>
+
+<div class="figure">
+<p><img src="./images/redlining.png" alt="redlining.png" width="80%" height="80%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgd73cef0">
+<h3 id="orgd73cef0">WMS Loader</h3>
+
+<div class="figure">
+<p><img src="./images/wms_loader.png" alt="wms_loader.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgd487797">
+<h3 id="orgd487797">Thematischer Layerbaum</h3>
+
+<div class="figure">
+<p><img src="./images/thematischer_layerbaum.png" alt="thematischer_layerbaum.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orga600bd2">
+<h3 id="orga600bd2">Messen (Linie / Fläche)</h3>
+
+<div class="figure">
+<p><img src="./images/linie_messen.png" alt="linie_messen.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgd5c610e">
+<h3 id="orgd5c610e">Features: Anwendungen und Designs</h3>
+
+</section>
+<section id="slide-org42a14d1">
+<h3 id="org42a14d1">Design Stadt Monheim</h3>
+
+<div class="figure">
+<p><img src="https://mapbender.org/sites/default/files/stadtmonheim.png" alt="stadtmonheim.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org10001b4">
+<h3 id="org10001b4">Design Stadt Gütersloh</h3>
+
+<div class="figure">
+<p><img src="./images/guetersloh.png" alt="guetersloh.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org8986d2b">
+<h3 id="org8986d2b">Design Kreis Lippe</h3>
+
+<div class="figure">
+<p><img src="./images/lippe_design.png" alt="lippe_design.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org77ec5c9">
+<h3 id="org77ec5c9">Features: Erweiterungen von Projekten</h3>
+
+</section>
+<section id="slide-org3fc865c">
+<h3 id="org3fc865c">Kreis Lippe: Automatisches B-Plan laden</h3>
+
+<div class="figure">
+<p><img src="./images/kreis_lippe_bplan.png" alt="kreis_lippe_bplan.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgb22afdd">
+<h3 id="orgb22afdd">Eisenbahnbundesamt: Legende</h3>
+
+<div class="figure">
+<p><img src="./images/eba_legende.png" alt="eba_legende.png" width="80%" height="80%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org8b4dc04">
+<h3 id="org8b4dc04">EBA: Statistiken</h3>
+
+<div class="figure">
+<p><img src="./images/eba_statistiken.png" alt="eba_statistiken.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org93124f1">
+<h3 id="org93124f1">Stadt Troisdorf: Suchen</h3>
+
+<div class="figure">
+<p><img src="./images/troisdorf_suchen.png" alt="troisdorf_suchen.png" width="80%" height="80%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org3d79a6a">
+<h3 id="org3d79a6a">Suchen&#x2026;</h3>
+
+<div class="figure">
+<p><img src="./images/suche_wordcloud.png" alt="suche_wordcloud.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org4de08de">
+<h2 id="org4de08de">Community</h2>
+<div class="outline-text-2" id="text-org4de08de">
+</div>
+</section>
+<section id="slide-org4be074a">
+<h3 id="org4be074a">Mapbender-Users Mailingliste</h3>
+
+<div class="figure">
+<p><img src="./images/community_mapbender_users.png" alt="community_mapbender_users.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org6955022">
+<h3 id="org6955022">Github Issues</h3>
+
+<div class="figure">
+<p><img src="./images/community_github_issues.png" alt="community_github_issues.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org6946297">
+<h3 id="org6946297">Contributing.md:</h3>
+
+<div class="figure">
+<p><img src="./images/contributing_md.png" alt="contributing_md.png" width="70%" height="70%" />
+</p>
+</div>
+
+<p>
+<a href="https://github.com/mapbender/mapbender-starter/blob/release/3.0.6/CONTRIBUTING.md">https://github.com/mapbender/mapbender-starter/blob/release/3.0.6/CONTRIBUTING.md</a>
+</p>
+
+
+</section>
+<section id="slide-orgcf01e6d">
+<h3 id="orgcf01e6d">AirBNB JS Styleguide</h3>
+
+<div class="figure">
+<p><img src="./images/airbnb_js_styleguide.png" alt="airbnb_js_styleguide.png" width="70%" height="70%" />
+</p>
+</div>
+
+<p>
+<a href="https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.js.md">https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.js.md</a>
+</p>
+
+
+</section>
+<section id="slide-org6c0df3f">
+<h3 id="org6c0df3f">PHP Code Styleguide</h3>
+
+<div class="figure">
+<p><img src="./images/php_styleguide.png" alt="php_styleguide.png" width="70%" height="70%" />
+</p>
+</div>
+
+<p>
+<a href="https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.php.md">https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.php.md</a>
+</p>
+
+
+</section>
+<section id="slide-org8e6428a">
+<h3 id="org8e6428a">Documentation:</h3>
+<p>
+Umstrukturiert:
+<a href="http://docs.mapbender.org/restructure/">http://docs.mapbender.org/restructure/</a> 
+</p>
+
+
+<p>
+Neues Thema:
+</p>
+
+<p>
+<a href="https://docs.mapbender.org/new_theme/">https://docs.mapbender.org/new_theme/</a>
+</p>
+
+
+
+<div class="figure">
+<p><img src="./images/mapbender_doku_newtheme.png" alt="mapbender_doku_newtheme.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org8ab119d">
+<h2 id="org8ab119d">Development</h2>
+<div class="outline-text-2" id="text-org8ab119d">
+</div>
+</section>
+<section id="slide-org93fc0f4">
+<h3 id="org93fc0f4">Coordinate-Utility</h3>
+<p>
+<a href="https://github.com/mapbender/coordinates-utility">https://github.com/mapbender/coordinates-utility</a>
+</p>
+
+<p>
+Einfaches Modul um Koordinaten abzugreifen.
+</p>
+
+
+<div class="figure">
+<p><img src="https://raw.githubusercontent.com/mapbender/mapbender-documentation/release/3.0.6/figures/de/coordinate_utility.png" alt="coordinate_utility.png" width="70%" height="70%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgdf2f617">
+<h3 id="orgdf2f617">QGIS Layerreihenfolge Administration</h3>
+
+<div class="figure">
+<p><img src="https://raw.githubusercontent.com/mapbender/mapbender-documentation/release/3.0.6/figures/de/mapbender3_wms_application_settings.png" alt="mapbender3_wms_application_settings.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org9660b45">
+<h3 id="org9660b45">QGIS Layerreihenfolge Doku</h3>
+
+<div class="figure">
+<p><img src="./images/layerreihenfolge_doku.png" alt="layerreihenfolge_doku.png" width="70%" height="70%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org07439ac">
+<h3 id="org07439ac">QGIS Layerreihenfolge Auswirkung</h3>
+<p>
+<a href="https://www.norbit.de/75/">norGIS ALKIS für QGIS - norBIT GmbH</a>
+</p>
+
+
+</section>
+<section id="slide-org1af0f01">
+<h3 id="org1af0f01">Viele interne Dinge (WMS und Co.)</h3>
+<ul>
+<li>Update auf Symfony 2.8 (siehe PHP Requirements)</li>
+<li>Doctrine Param Coverter Definitionen (PR #645)</li>
+<li>WMSLayerSource: getAuthority (PR #542)</li>
+<li>DimensionsHandler (#610). Dieser kann in den kommenden Versionen veröffentlicht werden.</li>
+<li>Adding elements in backend can fail with "Warning: usort(): Array was modified &#x2026;" (#586)</li>
+
+</ul>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org0363013">
+<h2 id="org0363013">Zukunft</h2>
+<div class="outline-text-2" id="text-org0363013">
+</div>
+</section>
+<section id="slide-orgb2a9188">
+<h3 id="orgb2a9188">Pipeline</h3>
+
+</section>
+<section id="slide-org022fdfd">
+<h3 id="org022fdfd">LDAP</h3>
+<ul>
+<li>LDAP Unterstützung: Anbindung der Benutzer- und Gruppen an ein LDAP</li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="https://raw.githubusercontent.com/mapbender/mapbender-documentation/214bc4012855098b3c511d2ed079f16b83824d08/figures/ldap/ldap_mb_search_groups.png" alt="ldap_mb_search_groups.png" width="70%" height="70%" />
+</p>
+</div>
+
+<p>
+<a href="https://github.com/mapbender/mapbender-documentation/blob/214bc4012855098b3c511d2ed079f16b83824d08/de/bundles/Mapbender/CoreBundle/elements/ldap.rst">Dokumentation (Draft)</a>
+</p>
+
+</section>
+<section id="slide-org3fdf3ca">
+<h3 id="org3fdf3ca">UTF-Grid</h3>
+
+<div class="figure">
+<p><img src="./images/utf-grid.png" alt="utf-grid.png" width="70%" height="70%" />
+</p>
+</div>
+
+<ul>
+<li>Anzeige von Sachinformationen bei Hover.</li>
+<li>GetMap Request mit Ausgabe application/json</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org32a7706">
+<h3 id="org32a7706">DimensionsHandler</h3>
+
+<div class="figure">
+<p><img src="./images/dimensions_handler.png" alt="dimensions_handler.png" width="70%" height="70%" />
+</p>
+</div>
+
+<p>
+<a href="https://github.com/mapbender/mapbender-documentation/blob/feature/dimensions-handler/de/functions/misc/dimensions_handler.rst">Dokumentation (Draft)</a>
+</p>
+
+</section>
+<section id="slide-orgc265bd0">
+<h3 id="orgc265bd0">WMTS-Unterstützung</h3>
+
+
+
+
+</section>
+<section id="slide-org17a2584">
+<h3 id="org17a2584">Kleinigkeiten</h3>
+<ul>
+<li>Übersicht welche Datenquellen kommen in welcher Anwendung vor</li>
+
+<li>Verschiebbare Übersichtskarte</li>
+
+<li>Übersicht Metainformationen zur Anwendung</li>
+
+<li></li>
+
+</ul>
+
+
+</section>
+<section id="slide-orgc5e614a">
+<h3 id="orgc5e614a">Versionierung</h3>
+<ul>
+<li>Mapbender2 auf Mapbender3 war ein Bruch.</li>
+<li>Wir planen eine Umstellung der Versionierung auf 3 Digits.</li>
+<li>Damit wird ein Mapbender Version 4 realistisch.</li>
+<li>Der Wechsel von Mapbender v3 auf v4 wird kleiner sein.</li>
+<li>Ähnlich Openlayers 3 auf 4.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org5ea4594">
+<h2 id="org5ea4594">OpenLayers4</h2>
+<div class="outline-text-2" id="text-org5ea4594">
+</div>
+</section>
+<section id="slide-org784ed8d">
+<h3 id="org784ed8d">OL4: Stand</h3>
+<ul>
+<li>Umschreiben der Elemente für OpenLayers4</li>
+<li>Von der Karte (Map) bis hin zum ActivityIndicator</li>
+<li>Legende</li>
+<li>Layerbaum</li>
+<li>FeatureInfo</li>
+<li>Drucken</li>
+<li>&#x2026;</li>
+
+</ul>
+
+
+</section>
+<section id="slide-orgdf62272">
+<h3 id="orgdf62272">Vorzüge</h3>
+<ul>
+<li>besseres Handling von mobilen Anwendungen (zum Beispiel touch-display)</li>
+<li>high-DPI (retina display) Unterstützung</li>
+<li>besseres WYSIWYG (z.B. im Druck)</li>
+<li>Grundlage für 3D-Unterstützung</li>
+<li>bessere Unterstützung von Konvertierungen (KML, GeoJSON, &#x2026;)</li>
+
+</ul>
+
+</section>
+<section id="slide-org0ea2ab1">
+<h3 id="org0ea2ab1">Vorzüge</h3>
+<ul>
+<li>genauere Transformation vom Pixel zur Koordinate (getImageData function)</li>
+<li>mehr geographische Tools "out-of-the-box" (clipping etc)</li>
+<li>höhere Performance =&gt; client-side vector rendering</li>
+<li>schnellere Entwicklungen wegen besserer Dokumentation</li>
+<li>End-of-Life von OL2 bedeutet Sicherheitsrisiken.</li>
+
+</ul>
+
+</section>
+<section id="slide-org12321ed">
+<h3 id="org12321ed">OL4: Sponsoring</h3>
+<ul>
+<li>Wir unterstützen als WhereGroup die Implementierung dieser Features.</li>
+<li>Etwa 120 Tage Entwicklungszeit</li>
+<li>Unterstützung als Sponsoring der Mapbender-Nutzer</li>
+
+<li>Jeder profitiert von dieser Umsetzung</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org909be34">
+<h2 id="org909be34"></h2>
+<p>
+Vielen Dank für die Aufmerksamkeit
+</p>
+
+<p>
+<a href="http://www.mapbender.org">http://www.mapbender.org</a>
+</p>
+</section>
+</section>
+</div>
+</div>
+<p>WhereGroup 2018</p>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
