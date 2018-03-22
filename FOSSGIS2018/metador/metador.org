@@ -1,0 +1,43 @@
+# -*- mode:org -*-
+#+TITLE: Metador
+#+AUTHOR: Axel Schaefer
+#+Email: axel.schaefer@wheregroup.com
+# REVEAL_ROOT: file:////home/axel/dev/reveal.js
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/
+
+#+OPTIONS: num:nil
+#+OPTIONS: ^:nil
+
+#+REVEAL_THEME: black
+#+REVEAL_HLEVEL: 1
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal with Emacs.">
+#+REVEAL_POSTAMBLE: <p>WhereGroup 2018</p>
+#+REVEAL_PLUGINS: (highlight)
+# REVEAL_EXTRA_CSS: ./local.css
+
+# Org-reveal: https://github.com/yjwen/org-reveal
+# Hint: http://www.i3s.unice.fr/~malapert/org/tips/emacs_orgmode.html#orgheadline22
+# 
+# Explanation options:
+# num:nil: Disable Heading Numbers
+# ^:nil Underscore will not be subscript
+# 
+# Disabled Options
+# REVEAL_SLIDE_HEADER: Org-Reveal with Emacs
+# REVEAL_SLIDE_FOOTER: (c) Axel Schaefer 2018
+# OPTIONS: reveal_title_slide:nil
+
+* Was gibt es Neues in Metador?
+
+#+ATTR_HTML: :width 30% :height 30%
+https://raw.githubusercontent.com/mapbender/presentations/axs/fossgis2018/FOSSGIS2018/mapbender/images/mapbender_bender.jpg
+
+
+* 
+
+Vielen Dank für die Aufmerksamkeit
+
+http://www.mapbender.org
+
+
+
