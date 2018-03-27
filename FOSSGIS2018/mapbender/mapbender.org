@@ -1,0 +1,417 @@
+# -*- mode:org -*-
+#+TITLE: Mapbender
+#+AUTHOR: Axel Schaefer
+#+Email: axel.schaefer@wheregroup.com
+# REVEAL_ROOT: file:////home/axel/dev/reveal.js
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/
+
+#+OPTIONS: num:nil
+#+OPTIONS: ^:nil
+
+#+REVEAL_THEME: black
+#+REVEAL_HLEVEL: 1
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal with Emacs.">
+#+REVEAL_POSTAMBLE: <p>WhereGroup 2018</p>
+#+REVEAL_PLUGINS: (highlight)
+# REVEAL_EXTRA_CSS: ./local.css
+
+# Org-reveal: https://github.com/yjwen/org-reveal
+# Hint: http://www.i3s.unice.fr/~malapert/org/tips/emacs_orgmode.html#orgheadline22
+# 
+# Explanation options:
+# num:nil: Disable Heading Numbers
+# ^:nil Underscore will not be subscript
+# 
+# Disabled Options
+# REVEAL_SLIDE_HEADER: Org-Reveal with Emacs
+# REVEAL_SLIDE_FOOTER: (c) Axel Schaefer 2018
+# OPTIONS: reveal_title_slide:nil
+
+* Was gibt es Neues in Mapbender?
+
+#+ATTR_HTML: :width 30% :height 30%
+https://raw.githubusercontent.com/mapbender/presentations/axs/fossgis2018/FOSSGIS2018/mapbender/images/mapbender_bender.jpg
+
+
+* Mein Gott, der Titel?!!
+
+https://upload.wikimedia.org/wikipedia/en/0/0f/FuturamaProfessorFarnsworth.png
+
+
+* 
+
+Axel Schaefer
+
+[[https://github.com/axxl][https://github.com/axxl]] 
+
+Mapbender
+
+https://www.osgeo.org/projects/mapbender/ | https://github.com/mapbender
+
+WhereGroup
+
+http://www.wheregroup.com | https://github.com/WhereGroup | https://www.osgeo.org/service-providers/wheregroup/
+
+
+* Was ist Mapbender?
+
+https://mapbender.org/sites/default/files/mapbender-logo_webside.png
+
+
+* Professionelle Open-Source-Software
+
+Quellcode: [[http://github.com/mapbender][Github]]
+
+Maintainer: [[http://www.wheregroup.com][WhereGroup]]
+
+
+* Erstellung kartenbasierter Webanwendungen
+
+** 
+
+[[http://laermkartierung1.eisenbahn-bundesamt.de/mb3/app.php/application/eba][Eisenbahnbundesamt]]
+
+#+ATTR_HTML: :width 200% :height 200%
+https://mapbender.org/sites/default/files/eba.png
+
+
+** 
+
+[[http://geo.kreislippe.de/][Geoportal Kreis Lippe]]
+
+#+ATTR_HTML: :width 200% :height 200%
+http://mapbender.org/sites/default/files/geokreislippe.png
+
+
+
+** 
+
+[[http://geoportal.frankfurt.de/][Geoportal Stadt Frankfurt]]
+
+#+ATTR_HTML: :width 200% :height 200%
+https://mapbender.org/sites/default/files/geoportalfrankfurt.png
+
+
+
+
+* Erstellung / Administration
+
+"Backend"
+
+Nach der Anmeldung
+
+
+** Viele eigene Anwendungen
+
+#+ATTR_HTML: :width 70% :height 70%
+https://doc.mapbender.org/_images/mapbender3_application_overview.png
+
+** Einladen von WMS Diensten
+
+#+ATTR_HTML: :width 70% :height 70%
+https://doc.mapbender.org/_images/mapbender3_wms_application_settings.png
+
+** Elemente / Funktionen in den Anwendungen
+
+#+ATTR_HTML: :width 70% :height 70%
+https://doc.mapbender.org/_images/mapbender3_application_elements.png
+
+
+** Anmeldung / Benutzerprofile / Absicherung
+
+#+ATTR_HTML: :width 70% :height 70%
+https://doc.mapbender.org/_images/mapbender3_create_user.png
+
+
+* Features
+
+** Digitalisierung / Editierung
+
+#+ATTR_HTML: :width 80% :height 80%
+https://doc.mapbender.org/_images/digitizer.png
+
+
+** BaseSourceSwitcher
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/rvr_historische_luftbilder.png
+
+
+** Suche
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/rvr_adressuche.png
+
+
+** Druck
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/eba_drucken.png
+
+
+** Druckausgabe
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/eba_druckausgabe.png
+
+
+** Redlining 
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/redlining.png
+
+** WMS Loader
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/wms_loader.png
+
+
+** Thematischer Layerbaum
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/thematischer_layerbaum.png
+
+
+** Messen (Linie / Fläche)
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/linie_messen.png
+
+
+** Features: Anwendungen und Designs
+
+** Design Stadt Monheim
+#+ATTR_HTML: :width 80% :height 80%
+https://mapbender.org/sites/default/files/stadtmonheim.png
+
+
+** Design Stadt Gütersloh
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/guetersloh.png
+
+
+** Design Kreis Lippe
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/lippe_design.png
+
+
+** Features: Erweiterungen von Projekten
+
+** Kreis Lippe: Automatisches B-Plan laden 
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/kreis_lippe_bplan.png
+
+
+** Eisenbahnbundesamt: Legende
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/eba_legende.png
+
+** EBA: Statistiken
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/eba_statistiken.png
+
+
+** Stadt Troisdorf: Suchen
+
+#+ATTR_HTML: :width 80% :height 80%
+file:./images/troisdorf_suchen.png
+
+
+** Suchen...
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/suche_wordcloud.png
+
+
+* Community
+
+** Mapbender-Users Mailingliste
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/community_mapbender_users.png
+
+
+** Github Issues
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/community_github_issues.png
+
+
+** Contributing.md:
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/contributing_md.png
+
+https://github.com/mapbender/mapbender-starter/blob/release/3.0.6/CONTRIBUTING.md
+
+
+** AirBNB JS Styleguide
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/airbnb_js_styleguide.png
+
+https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.js.md
+
+
+** PHP Code Styleguide
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/php_styleguide.png
+
+https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.php.md
+
+
+** Documentation:
+
+Umstrukturiert:
+http://docs.mapbender.org/restructure/ 
+
+
+Neues Thema:
+
+https://docs.mapbender.org/new_theme/
+
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/mapbender_doku_newtheme.png
+
+
+* Development
+
+** Coordinate-Utility
+
+https://github.com/mapbender/coordinates-utility
+
+Einfaches Modul um Koordinaten abzugreifen.
+
+#+ATTR_HTML: :width 70% :height 70%
+https://raw.githubusercontent.com/mapbender/mapbender-documentation/release/3.0.6/figures/de/coordinate_utility.png
+
+** QGIS Layerreihenfolge Administration
+
+#+ATTR_HTML: :width 70% :height 70%
+https://raw.githubusercontent.com/mapbender/mapbender-documentation/release/3.0.6/figures/de/mapbender3_wms_application_settings.png
+
+
+** QGIS Layerreihenfolge Doku
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/layerreihenfolge_doku.png
+
+
+** QGIS Layerreihenfolge Auswirkung
+
+[[https://www.norbit.de/75/][norGIS ALKIS für QGIS - norBIT GmbH]]
+
+
+** Viele interne Dinge (WMS und Co.)
+
+-  Update auf Symfony 2.8 (siehe PHP Requirements)
+-  Doctrine Param Coverter Definitionen (PR #645)
+-  WMSLayerSource: getAuthority (PR #542)
+-  DimensionsHandler (#610). Dieser kann in den kommenden Versionen veröffentlicht werden. 
+-  Adding elements in backend can fail with "Warning: usort(): Array was modified ..." (#586)
+
+
+
+* Zukunft
+
+** Pipeline
+
+** LDAP
+
+- LDAP Unterstützung: Anbindung der Benutzer- und Gruppen an ein LDAP
+
+#+ATTR_HTML: :width 70% :height 70%
+https://raw.githubusercontent.com/mapbender/mapbender-documentation/214bc4012855098b3c511d2ed079f16b83824d08/figures/ldap/ldap_mb_search_groups.png
+
+[[https://github.com/mapbender/mapbender-documentation/blob/214bc4012855098b3c511d2ed079f16b83824d08/de/bundles/Mapbender/CoreBundle/elements/ldap.rst][Dokumentation (Draft)]]
+
+** UTF-Grid
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/utf-grid.png
+
+- Anzeige von Sachinformationen bei Hover.
+- GetMap Request mit Ausgabe application/json
+
+
+** DimensionsHandler
+
+#+ATTR_HTML: :width 70% :height 70%
+file:./images/dimensions_handler.png
+
+[[https://github.com/mapbender/mapbender-documentation/blob/feature/dimensions-handler/de/functions/misc/dimensions_handler.rst][Dokumentation (Draft)]]
+
+** WMTS-Unterstützung
+
+
+
+
+** Kleinigkeiten
+
+- Übersicht welche Datenquellen kommen in welcher Anwendung vor
+
+- Verschiebbare Übersichtskarte
+
+- Übersicht Metainformationen zur Anwendung
+
+- 
+
+
+** Versionierung
+
+- Mapbender2 auf Mapbender3 war ein Bruch.
+- Wir planen eine Umstellung der Versionierung auf 3 Digits.
+- Damit wird ein Mapbender Version 4 realistisch.
+- Der Wechsel von Mapbender v3 auf v4 wird kleiner sein.
+- Ähnlich Openlayers 3 auf 4.
+
+* OpenLayers4
+
+** OL4: Stand
+
+- Umschreiben der Elemente für OpenLayers4
+- Von der Karte (Map) bis hin zum ActivityIndicator
+- Legende
+- Layerbaum
+- FeatureInfo
+- Drucken
+- ...
+
+
+** Vorzüge
+
+- besseres Handling von mobilen Anwendungen (zum Beispiel touch-display)
+- high-DPI (retina display) Unterstützung
+- besseres WYSIWYG (z.B. im Druck)
+- Grundlage für 3D-Unterstützung
+- bessere Unterstützung von Konvertierungen (KML, GeoJSON, ...)
+
+** Vorzüge
+
+- genauere Transformation vom Pixel zur Koordinate (getImageData function)
+- mehr geographische Tools "out-of-the-box" (clipping etc)
+- höhere Performance => client-side vector rendering
+- schnellere Entwicklungen wegen besserer Dokumentation
+- End-of-Life von OL2 bedeutet Sicherheitsrisiken.
+
+** OL4: Sponsoring
+
+- Wir unterstützen als WhereGroup die Implementierung dieser Features. 
+- Unterstützung als Sponsoring der Mapbender-Nutzer
+
+- Jeder profitiert von dieser Umsetzung
+
+
+* 
+
+Vielen Dank für die Aufmerksamkeit
+
+http://www.mapbender.org
+
+
+
