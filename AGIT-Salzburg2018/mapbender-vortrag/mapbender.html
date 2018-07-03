@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Mapbender</title>
+    <meta name="author" content="Axel Schaefer, WhereGroup"/>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+		<link rel="stylesheet" href="https://revealjs.com/css/theme/black.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://revealjs.com/lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+		 var link = document.createElement( 'link' );
+		 link.rel = 'stylesheet';
+		 link.type = 'text/css';
+		 link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+		 document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		  <script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+				<section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+					<h1>Mapbender</h1>
+					<p></p>
+					<p>
+						<small><a href="https://www.osgeo.org/member/schaefer-axel/">Axel Schaefer</a> | <a href="https://www.wheregroup.com/">WhereGroup</a></small>
+					</p>
+          <p>
+            <small>
+              AGIT 2018, Salzburg, 04.07.2018
+              <br />
+              <br />
+              Präsentation unter:<br />
+              <a href="https://github.com/mapbender/presentations/tree/master/AGIT-Salzburg2018">https://github.com/mapbender/presentations/tree/master/AGIT-Salzburg2018</a>
+            </small>
+          </p>
+				</section>
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Was gibt es Neues in Mapbender?</h2>
+          <p><img src="./images/mapbender_bender.jpg" alt="mapbender_bender.jpg" width="30%" height="30%" />
+          </p>
+        </section>
+
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2></h2>
+          <p>
+            Axel Schaefer
+          </p>
+
+          <p>
+            <a href="https://github.com/axxl">https://github.com/axxl</a> 
+          </p>
+
+          <p>
+            Mapbender
+          </p>
+
+          <p>
+            <a href="https://www.osgeo.org/projects/mapbender/">https://www.osgeo.org/projects/mapbender/</a> | <a href="https://github.com/mapbender">https://github.com/mapbender</a>
+          </p>
+
+          <p>
+            WhereGroup
+          </p>
+
+          <p>
+            <a href="http://www.wheregroup.com">http://www.wheregroup.com</a> | <a href="https://github.com/WhereGroup">https://github.com/WhereGroup</a> | <a href="https://www.osgeo.org/service-providers/wheregroup/">https://www.osgeo.org/service-providers/wheregroup/</a>
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Was ist Mapbender?</h2>
+          <p><img src="./images/mapbender-logo.png" alt="mapbender-logo.png" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Professionelle Open-Source-Software</h2>
+          <p>
+            Quellcode: <a href="http://github.com/mapbender">Github</a>
+          </p>
+          <p>
+            Maintainer: <a href="http://www.wheregroup.com">WhereGroup</a>
+          </p>
+        </section>
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Erstellung kartenbasierter Webanwendungen</h2>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+        <p>
+          <a href="http://laermkartierung1.eisenbahn-bundesamt.de/mb3/app.php/application/eba">Eisenbahnbundesamt</a>
+        </p>
+        <p><img src="./images/eba_legende.png" alt="eba.png" width="200%" height="200%" />
+        </p>
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <p>
+            <a href="http://geo.kreislippe.de/">Geoportal Kreis Lippe</a>
+          </p>
+          <p><img src="./images/geokreislippe.png" alt="geokreislippe.png" width="200%" height="200%" />
+          </p>
+        </section>
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <p>
+            <a href="http://geoportal.frankfurt.de/">Geoportal Stadt Frankfurt</a>
+          </p>
+          <p><img src="./images/geoportalfrankfurt.png" alt="geoportalfrankfurt.png" width="200%" height="200%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Erstellung / Administration</h2>
+          <p>
+            "Backend"
+          </p>
+          <p>
+            Nach der Anmeldung
+          </p>
+        </section>
+        
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Viele eigene Anwendungen</h3>
+          <p><img src="https://doc.mapbender.org/_images/mapbender3_application_overview.png" alt="mapbender3_application_overview.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Einladen von WMS Diensten</h3>
+          <p><img src="https://doc.mapbender.org/_images/mapbender3_wms_application_settings.png" alt="mapbender3_wms_application_settings.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Elemente / Funktionen in den Anwendungen</h3>
+          <p><img src="https://doc.mapbender.org/_images/mapbender3_application_elements.png" alt="mapbender3_application_elements.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Anmeldung / Benutzerprofile / Absicherung</h3>
+          <p><img src="https://doc.mapbender.org/_images/mapbender3_create_user.png" alt="mapbender3_create_user.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Features</h2>
+          <div class="outline-text-2" id="text-org765dec3">
+        </section>
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Digitalisierung / Editierung</h3>
+          <p><img src="https://doc.mapbender.org/_images/digitizer.png" alt="digitizer.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>BaseSourceSwitcher</h3>
+          <p><img src="./images/rvr_historische_luftbilder.png" alt="rvr_historische_luftbilder.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Suche</h3>
+          <p><img src="./images/rvr_adressuche.png" alt="rvr_adressuche.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Druck</h3>
+          <p><img src="./images/eba_drucken.png" alt="eba_drucken.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Druckausgabe</h3>
+          <p><img src="./images/eba_druckausgabe.png" alt="eba_druckausgabe.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Redlining</h3>
+          <p><img src="./images/redlining.png" alt="redlining.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>WMS Loader</h3>
+          <p><img src="./images/wms_loader.png" alt="wms_loader.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Thematischer Layerbaum</h3>
+          <p><img src="./images/thematischer_layerbaum.png" alt="thematischer_layerbaum.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Messen (Linie / Fläche)</h3>
+          <p><img src="./images/linie_messen.png" alt="linie_messen.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Features: Anwendungen und Designs</h3>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Design Stadt Monheim</h3>
+          <p><img src="https://mapbender.org/sites/default/files/stadtmonheim.png" alt="stadtmonheim.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Design Stadt Gütersloh</h3>
+          <p><img src="./images/guetersloh.png" alt="guetersloh.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Design Kreis Lippe</h3>
+          <p><img src="./images/lippe_design.png" alt="lippe_design.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Features: Erweiterungen von Projekten</h3>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Kreis Lippe: Automatisches B-Plan laden</h3>
+          <p><img src="./images/kreis_lippe_bplan.png" alt="kreis_lippe_bplan.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Eisenbahnbundesamt: Legende</h3>
+          <p><img src="./images/eba_legende.png" alt="eba_legende.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>EBA: Statistiken</h3>
+          <p><img src="./images/eba_statistiken.png" alt="eba_statistiken.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Stadt Troisdorf: Suchen</h3>
+          <p><img src="./images/troisdorf_suchen.png" alt="troisdorf_suchen.png" width="80%" height="80%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Suchen&#x2026;</h3>
+          <p><img src="./images/suche_wordcloud.png" alt="suche_wordcloud.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Community</h2>
+          <div class="outline-text-2" id="text-org4de08de">            
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Mapbender-Users Mailingliste</h3>
+          <p><img src="./images/community_mapbender_users.png" alt="community_mapbender_users.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Github Issues</h3>
+          <p><img src="./images/community_github_issues.png" alt="community_github_issues.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Contributing.md:</h3>
+          <p><img src="./images/contributing_md.png" alt="contributing_md.png" width="70%" height="70%" />
+          </p>
+          <p>
+            <a href="https://github.com/mapbender/mapbender-starter/blob/release/3.0.6/CONTRIBUTING.md">https://github.com/mapbender/mapbender-starter/blob/release/3.0.6/CONTRIBUTING.md</a>
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>AirBNB JS Styleguide</h3>
+          <p><img src="./images/airbnb_js_styleguide.png" alt="airbnb_js_styleguide.png" width="70%" height="70%" />
+          </p>
+          <p>
+            <a href="https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.js.md">https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.js.md</a>
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>PHP Code Styleguide</h3>
+          <p><img src="./images/php_styleguide.png" alt="php_styleguide.png" width="70%" height="70%" />
+          </p>
+          <p>
+            <a href="https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.php.md">https://github.com/mapbender/mapbender/blob/release/3.0.6/STYLE.php.md</a>
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Documentation:</h3>
+          <p>
+            Umstrukturiert und neues Thema
+            <a href="http://docs.mapbender.org/">http://docs.mapbender.org/</a> 
+          </p>
+          <p><img src="./images/mapbender_doku_newtheme.png" alt="mapbender_doku_newtheme.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Development</h2>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Coordinate-Utility</h3>
+          <p>
+            <a href="https://github.com/mapbender/coordinates-utility">https://github.com/mapbender/coordinates-utility</a>
+          </p>
+          <p>
+            Einfaches Modul um Koordinaten abzugreifen.
+          </p>
+          <p><img src="https://raw.githubusercontent.com/mapbender/mapbender-documentation/release/3.0.6/figures/de/coordinate_utility.png" alt="coordinate_utility.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>QGIS Layerreihenfolge Administration</h3>
+          <p><img src="https://raw.githubusercontent.com/mapbender/mapbender-documentation/release/3.0.6/figures/de/mapbender3_wms_application_settings.png" alt="mapbender3_wms_application_settings.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>QGIS Layerreihenfolge Doku</h3>
+          <p><img src="./images/layerreihenfolge_doku.png" alt="layerreihenfolge_doku.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+          
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>QGIS Layerreihenfolge Auswirkung</h3>
+          <p>
+            <a href="https://www.norbit.de/75/">norGIS ALKIS für QGIS - norBIT GmbH</a>
+          </p>
+        </section>
+
+            
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Viele interne Dinge (WMS und Co.)</h3>
+          <ul>
+            <li>Update auf Symfony 2.8 (siehe PHP Requirements)</li>
+            <li>Doctrine Param Coverter Definitionen (PR #645)</li>
+            <li>WMSLayerSource: getAuthority (PR #542)</li>
+            <li>DimensionsHandler (#610). Dieser kann in den kommenden Versionen veröffentlicht werden.</li>
+            <li>Adding elements in backend can fail with "Warning: usort(): Array was modified &#x2026;" (#586)</li>
+          </ul>
+        </section>
+
+
+          
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>Zukunft</h2>
+          <div class="outline-text-2" id="text-org0363013">            
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Pipeline</h3>
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>LDAP</h3>
+          <ul>
+            <li>LDAP Unterstützung: Anbindung der Benutzer- und Gruppen an ein LDAP</li>
+          </ul>
+          <p><img src="https://raw.githubusercontent.com/mapbender/mapbender-documentation/214bc4012855098b3c511d2ed079f16b83824d08/figures/ldap/ldap_mb_search_groups.png" alt="ldap_mb_search_groups.png" width="70%" height="70%" />
+          </p>
+          <p>
+            <a href="https://github.com/mapbender/mapbender-documentation/blob/214bc4012855098b3c511d2ed079f16b83824d08/de/bundles/Mapbender/CoreBundle/elements/ldap.rst">Dokumentation (Draft)</a>
+          </p>
+        </section>
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>UTF-Grid</h3>
+          <p><img src="./images/utf-grid.png" alt="utf-grid.png" width="70%" height="70%" />
+          </p>
+          <ul>
+            <li>Anzeige von Sachinformationen bei Hover.</li>
+            <li>GetMap Request mit Ausgabe application/json</li>
+          </ul>
+        </section>
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>DimensionsHandler</h3>
+          <p><img src="./images/dimensions_handler.png" alt="dimensions_handler.png" width="70%" height="70%" />
+          </p>
+          <p>
+            <a href="https://github.com/mapbender/mapbender-documentation/blob/feature/dimensions-handler/de/functions/misc/dimensions_handler.rst">Dokumentation (Draft)</a>
+          </p>
+        </section>
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>WMTS-Unterstützung</h3>
+        </section>
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Kleinigkeiten</h3>
+          <ul>
+            <li>Übersicht welche Datenquellen kommen in welcher Anwendung vor</li>
+            <li>Verschiebbare Übersichtskarte</li>
+            <li>Übersicht Metainformationen zur Anwendung</li>
+          </ul>
+        </section>
+        
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Versionierung</h3>
+          <ul>
+            <li>Mapbender2 auf Mapbender3 war ein Bruch.</li>
+            <li>Wir planen eine Umstellung der Versionierung auf 3 Digits.</li>
+            <li>Damit wird ein Mapbender Version 4 realistisch.</li>
+            <li>Der Wechsel von Mapbender v3 auf v4 wird kleiner sein.</li>
+            <li>Ähnlich Openlayers 3 auf 4.</li>
+          </ul>
+        </section>
+
+
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2>OpenLayers4</h2>
+          <div class="outline-text-2" id="text-org5ea4594">
+        </section>
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>OL4: Stand</h3>
+          <ul>
+            <li>Umschreiben der Elemente für OpenLayers4</li>
+            <li>Von der Karte (Map) bis hin zum ActivityIndicator</li>
+            <li>Legende</li>
+            <li>Layerbaum</li>
+            <li>FeatureInfo</li>
+            <li>Drucken</li>
+            <li>&#x2026;</li>
+          </ul>
+        </section>
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Vorzüge</h3>
+          <ul>
+            <li>besseres Handling von mobilen Anwendungen (zum Beispiel touch-display)</li>
+            <li>high-DPI (retina display) Unterstützung</li>
+            <li>besseres WYSIWYG (z.B. im Druck)</li>
+            <li>Grundlage für 3D-Unterstützung</li>
+            <li>bessere Unterstützung von Konvertierungen (KML, GeoJSON, &#x2026;)</li>
+          </ul>
+        </section>
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>Vorzüge</h3>
+          <ul>
+            <li>genauere Transformation vom Pixel zur Koordinate (getImageData function)</li>
+            <li>mehr geographische Tools "out-of-the-box" (clipping etc)</li>
+            <li>höhere Performance =&gt; client-side vector rendering</li>
+            <li>schnellere Entwicklungen wegen besserer Dokumentation</li>
+            <li>End-of-Life von OL2 bedeutet Sicherheitsrisiken.</li>
+          </ul>
+        </section>
+        
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h3>OL4: Sponsoring</h3>
+          <ul>
+            <li>Wir unterstützen als WhereGroup die Implementierung dieser Features.</li>
+            <li>Etwa 120 Tage Entwicklungszeit</li>
+            <li>Unterstützung als Sponsoring der Mapbender-Nutzer</li>
+            <li>Jeder profitiert von dieser Umsetzung</li>
+          </ul>
+          <p>
+            <a href="https://mapbender.org/?q=de/sponsoring-de">https://mapbender.org/?q=de/sponsoring-de</a>
+          </p>
+        </section>
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <p><img src="./images/mb_sponsoring.png" alt="mb_sponsoring.png" width="70%" height="70%" />
+          </p>
+        </section>
+
+
+
+        <section data-background="wg/logo1.png" data-background-size="150px" data-background-position="95% 3%">
+          <h2></h2>
+          <p>
+            Vielen Dank für die Aufmerksamkeit
+          </p>
+          <p>
+            <a href="http://www.mapbender.org">http://www.mapbender.org</a>
+          </p>
+          <p>WhereGroup 2018</p>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="https://revealjs.com/lib/js/head.min.js"></script>
+		<script src="https://revealjs.com/js/reveal.js"></script>
+    <script>
+		 // More info https://github.com/hakimel/reveal.js#configuration
+		 Reveal.initialize({
+				 controls: true,
+				 progress: true,
+				 history: true,
+				 center: true,
+				 transition: 'slide', // none/fade/slide/convex/concave/zoom
+				 // More info https://github.com/hakimel/reveal.js#dependencies
+				 dependencies: [
+					   { src: '//revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					   { src: '//revealjs.com/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					   { src: '//revealjs.com/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					   { src: '//revealjs.com/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					   { src: '//revealjs.com/plugin/search/search.js', async: true },
+					   { src: '//revealjs.com/plugin/zoom-js/zoom.js', async: true },
+					   { src: '//revealjs.com/plugin/notes/notes.js', async: true }
+				 ]
+		 });
+		</script>
+  </body>
+</html>
